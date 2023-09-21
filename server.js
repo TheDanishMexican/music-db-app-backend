@@ -15,6 +15,8 @@ import search from './routes/search.js';
 import addArtistToTrack from './routes/addArtistToTrack.js';
 import addTrackToAlbum from './routes/addTrackToAlbum.js';
 import deleteAlbum from './routes/deleteAlbum.js';
+import getUsers from './routes/getUsersTest.js';
+import frontPage from './routes/frontPage.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -36,6 +38,8 @@ app.use('/', search);
 app.use('/', addArtistToTrack);
 app.use('/', addTrackToAlbum);
 app.use('/', deleteAlbum);
+app.use('/', getUsers);
+app.use('/', frontPage);
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`);
