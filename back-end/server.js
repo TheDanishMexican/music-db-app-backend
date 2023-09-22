@@ -16,6 +16,7 @@ import addArtistToTrack from './routes/addArtistToTrack.js';
 import addTrackToAlbum from './routes/addTrackToAlbum.js';
 import deleteAlbum from './routes/deleteAlbum.js';
 import getAlbumInfo from './routes/getAlbumInfo.js';
+import updateData from './routes/updateData.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -38,6 +39,7 @@ app.use('/', addArtistToTrack);
 app.use('/', addTrackToAlbum);
 app.use('/', deleteAlbum);
 app.use('/', getAlbumInfo);
+app.use('/', updateData);
 
 
 app.listen(port, () => {
