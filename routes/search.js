@@ -7,15 +7,16 @@ const search = express.Router();
 
 search.get('/search', (request, response) => {
     const searchTerm = `%${request.query.q}%`;
-    const values = [searchTerm, searchTerm];
+    const values = [searchTerm, searchTerm, searchTerm];
     const query = `
-    (
+(
     SELECT
         'album' AS result_type,
         albums.album_id AS id,
         albums.album_name AS name,
         GROUP_CONCAT(DISTINCT artists.artist_name SEPARATOR ', ') AS artist_names,
-        GROUP_CONCAT(DISTINCT tracks.track_name SEPARATOR ', ') AS track_names
+        GROUP_CONCAT(DISTINCT tracks.track_name SEPARATOR ', ') AS track_names,
+        NULL AS album_names
     FROM
         albums
     INNER JOIN
@@ -37,7 +38,8 @@ UNION
         tracks.track_id AS id,
         tracks.track_name AS name,
         GROUP_CONCAT(DISTINCT albums.album_name ORDER BY albums.album_name ASC) AS album_names,
-        GROUP_CONCAT(DISTINCT artists.artist_name SEPARATOR ', ') AS artist_names
+        GROUP_CONCAT(DISTINCT artists.artist_name SEPARATOR ', ') AS artist_names,
+        NULL AS track_names
     FROM
         tracks
     INNER JOIN
@@ -53,8 +55,22 @@ UNION
     GROUP BY
         tracks.track_id, tracks.track_name
 )
-ORDER BY
-    result_type, name;
+UNION
+(
+     SELECT
+        'artist' AS result_type,
+        artists.artist_id AS id,
+        artists.artist_name AS name,
+        NULL AS album_names,
+        NULL AS track_names,
+        GROUP_CONCAT(DISTINCT '' SEPARATOR ', ') AS artist_names
+    FROM
+        artists
+    WHERE
+        artists.artist_name LIKE '${searchTerm}'
+    GROUP BY
+        artists.artist_id, artists.artist_name
+)
 
     `
 console.log(query);

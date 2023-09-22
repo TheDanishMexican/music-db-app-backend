@@ -6,7 +6,7 @@ import express from 'express';
 const allArtists = express.Router();
 
 allArtists.get('/artists', (request, response) => {
-    const query = 'SELECT * FROM artists ORDER BY artist_name';
+    const query = 'SELECT DISTINCT * FROM artists ORDER BY artist_name';
 
     database.query(query, (error, results, fields) => {
         if (error) {
