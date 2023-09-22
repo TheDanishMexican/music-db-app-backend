@@ -13,7 +13,7 @@ createAlbum.post('/albums', (request, response) => {
     database.query(query, values, (error, results, fields) => {
         if (error) {
             console.log(error);
-            response.json({message: error});
+            response.json({ message: error });
         } else {
             response.json(results);
         }
