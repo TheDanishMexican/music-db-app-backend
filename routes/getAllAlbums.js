@@ -9,8 +9,8 @@ allAlbums.get('/albums', (request, response) => {
     const query = `
         SELECT
             albums.album_name,
-            GROUP_CONCAT(DISTINCT artists.artist_name ORDER BY artists.artist_name ASC) AS artist_names,
-            GROUP_CONCAT(tracks.track_name ORDER BY tracks.track_name ASC) AS track_names
+            GROUP_CONCAT(DISTINCT artists.artist_name ORDER BY artists.artist_name ASC SEPARATOR ', ') AS artist_names,
+            GROUP_CONCAT(tracks.track_name ORDER BY tracks.track_name ASC SEPARATOR ', ') AS track_names
         FROM
             albums
         INNER JOIN
