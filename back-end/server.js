@@ -17,7 +17,7 @@ import addTrackToAlbum from './routes/addTrackToAlbum.js';
 import deleteAlbum from './routes/deleteAlbum.js';
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3306;
 
 app.use(express.json());
 app.use(cors());
