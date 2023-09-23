@@ -73,7 +73,6 @@ UNION
 )
 
     `
-console.log(query);
     database.query(query, values, (error, results, fields) => {
         if (error) {
             console.log(error);
