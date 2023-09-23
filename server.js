@@ -45,5 +45,5 @@ app.use('/', createEntireAlbum);
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`);
-    console.log(`Tracks Endpoint http://localhost:${port}/tracks`);
+    console.log(`Tracks Endpoint https://test-for-database-project.azurewebsites.net/tracks`);
 });
