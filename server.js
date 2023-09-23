@@ -17,6 +17,7 @@ import deleteAlbum from './routes/deleteAlbum.js';
 import getUsers from './routes/getUsersTest.js';
 import frontPage from './routes/frontPage.js';
 import getAlbumInfo from './routes/getAlbumInfo.js';
+import createEntireAlbum from './routes/createEntireAlbum.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -40,6 +41,7 @@ app.use('/', deleteAlbum);
 app.use('/', getUsers);
 app.use('/', frontPage);
 app.use('/', getAlbumInfo);
+app.use('/', createEntireAlbum);
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`);
