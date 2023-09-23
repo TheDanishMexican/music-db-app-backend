@@ -27,6 +27,8 @@ Tracks Endpoint: https://test-for-database-project.azurewebsites.net/tracks "
 ---
 3. You can now proceed to the README in the frontend repository for further guidance.
 
+---
+
 ## Links
 
 + Backend Repository: https://github.com/TheDanishMexican/music-db-app-backend/tree/master
