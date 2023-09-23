@@ -1,18 +1,33 @@
-Welcome to our music database app.
+# Music Database App
+Welcome to our music database app!
 
-To run this app correctly, you first need to navigate, via your terminal, to the folder 'music-db-app-backend-danielBranch' where it is located on your machine and then run 'npm install' via your terminal.
-This will ensure that you have all the necessary dependencies installed.
+## Getting Started
+To run this app correctly, follow these steps:
 
-Then you will proceed to run the command 'npm start' which should start the server and log the following in your terminal 
-"App listening on port 3000
-Tracks Endpoint https://test-for-database-project.azurewebsites.net/tracks"
+Open your terminal and navigate to the music-db-app-backend-danielBranch folder on your local machine.
 
-You can now move on to the README in the front end repository for further guidance.
+Run the following command to install all the necessary dependencies:
 
-LINK BACKEND REPO: https://github.com/TheDanishMexican/music-db-app-backend/tree/danielBranch
+" npm install "
 
-LINK DEPLOYED SITE(FRONTEND): https://thedanishmexican.github.io/music-db-app-frontend/
+This ensures that you have all the required packages installed.
 
-LINK DEPLOYED AZURE SERVER TRACKS DATA(BACKEND): https://test-for-database-project.azurewebsites.net/tracks
+Start the server by running the command:
 
-***FYI: The main branch of our repo is danielBranch, if there is any confusion.***
+"npm start"
+
+This will initiate the server, and you should see the following message logged in your terminal:
+
+" App listening on port 3000
+Tracks Endpoint: https://test-for-database-project.azurewebsites.net/tracks "
+
+You can now proceed to the README in the frontend repository for further guidance.
+
+Links
+Backend Repository: https://github.com/TheDanishMexican/music-db-app-backend/tree/master
+
+Deployed Frontend Site: https://thedanishmexican.github.io/music-db-app-frontend/
+
+Deployed Azure Server (Tracks Data): https://test-for-database-project.azurewebsites.net/tracks
+
+Note: The main branch of our repo is called master, in case of any confusion.
