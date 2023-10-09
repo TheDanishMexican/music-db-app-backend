@@ -13,11 +13,11 @@ const dbConfig = {
     multipleStatements: true
 }
 
-// Add SSL certificate if provided in environment variables
-if (process.env.MYSQL_CERT) {
-    // Read the SSL certificate file asynchronously
-    dbConfig.ssl = { ca: await fs.readFile("DigiCertGlobalRootCA.crt.pem") }; // Specify SSL certificate
-}
+// // Add SSL certificate if provided in environment variables
+// if (process.env.MYSQL_CERT) {
+//     // Read the SSL certificate file asynchronously
+//     dbConfig.ssl = { ca: await fs.readFile("DigiCertGlobalRootCA.crt.pem") }; // Specify SSL certificate
+// }
 
 const database = mysql.createConnection(dbConfig);
 
