@@ -8,7 +8,7 @@ const getAlbumInfo = express.Router();
 getAlbumInfo.get(`/albums/:id`, (request, response) => {
     const id = request.params.id;
 
-    const query =`
+    const query = `
 SELECT 
     albums.album_id, 
     albums.album_name, 
